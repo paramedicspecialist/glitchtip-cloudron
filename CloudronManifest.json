@@ -6,7 +6,7 @@
   "packagerUrl": "https://github.com/paramedicspecialist",
   "packageUrl": "https://github.com/paramedicspecialist/glitchtip-cloudron",
   "tagline": "Error tracking for your Cloudron",
-  "version": "6.2.6-1",
+  "version": "6.2.6",
   "upstreamVersion": "6.2.6",
   "description": "file://DESCRIPTION.md",
   "changelog": "file://CHANGELOG",
