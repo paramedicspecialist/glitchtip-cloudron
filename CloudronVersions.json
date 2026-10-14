@@ -27,6 +27,9 @@
         "optionalSso": true,
         "icon": "file://logo.png",
         "iconUrl": "https://raw.githubusercontent.com/paramedicspecialist/glitchtip-cloudron/main/logo.png",
+        "mediaLinks": [
+          "https://raw.githubusercontent.com/paramedicspecialist/glitchtip-cloudron/main/screenshot.png"
+        ],
         "tags": [
           "monitoring",
           "errors",
@@ -56,7 +59,7 @@
         "dockerImage": "ghcr.io/paramedicspecialist/glitchtip-cloudron:6.2.6"
       },
       "publishState": "published",
-      "ts": "Wed, 14 Oct 2026 03:47:40 GMT"
+      "ts": "Wed, 14 Oct 2026 03:51:35 GMT"
     }
   }
 }

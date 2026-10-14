@@ -22,6 +22,9 @@
   "optionalSso": true,
   "icon": "file://logo.png",
   "iconUrl": "https://raw.githubusercontent.com/paramedicspecialist/glitchtip-cloudron/main/logo.png",
+  "mediaLinks": [
+    "https://raw.githubusercontent.com/paramedicspecialist/glitchtip-cloudron/main/screenshot.png"
+  ],
   "tags": [
     "monitoring",
     "errors",
