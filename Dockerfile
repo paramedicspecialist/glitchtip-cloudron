@@ -12,7 +12,7 @@ RUN arch="$(dpkg --print-architecture)" \
     && chmod 755 /usr/local/bin/gosu \
     && gosu nobody true
 
-COPY start.sh configure.py /app/pkg/
+COPY start.sh configure.py env.sh /app/pkg/
 COPY cloudron_hook.py /tmp/cloudron_hook.py
 RUN python - <<'PY'
 import pathlib
@@ -24,7 +24,7 @@ shutil.copy("/tmp/cloudron_hook.py", dest / "cloudron_hook.py")
 (dest / "cloudron_glitchtip.pth").write_text("import cloudron_hook\n")
 PY
 RUN chmod 755 /app/pkg/start.sh \
-    && chmod 644 /app/pkg/configure.py
+    && chmod 644 /app/pkg/configure.py /app/pkg/env.sh
 
 WORKDIR /code
 ENTRYPOINT ["/app/pkg/start.sh"]

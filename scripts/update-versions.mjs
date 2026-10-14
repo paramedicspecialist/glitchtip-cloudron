@@ -18,13 +18,13 @@ function changelogFor(version) {
     const start = text.indexOf(header);
     if (start === -1) return `* GlitchTip ${version}`;
     const rest = text.slice(start + header.length).replace(/^\s+/, '');
-    const next = rest.search(/\n\[[0-9]+\.[0-9]+\.[0-9]+\]/);
+    const next = rest.search(/\n\[[0-9]+\.[0-9]+\.[0-9]+(-[0-9]+)?\]/);
     return (next === -1 ? rest : rest.slice(0, next)).trim();
 }
 
 const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
 const version = manifest.version;
-if (!/^[0-9]+\.[0-9]+\.[0-9]+$/.test(version)) {
+if (!/^[0-9]+\.[0-9]+\.[0-9]+(-[0-9]+)?$/.test(version)) {
     console.error(`Refusing non-semver package version: ${version}`);
     process.exit(1);
 }

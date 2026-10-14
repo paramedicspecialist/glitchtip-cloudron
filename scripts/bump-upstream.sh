@@ -90,16 +90,19 @@ fi
 publish_version="$(python3 - "${root}" "${latest}" <<'PY'
 import json
 import pathlib
+import re
 import sys
 
 root = pathlib.Path(sys.argv[1])
 latest = sys.argv[2]
 
 def parse_version(value):
-    parts = str(value).split(".")
-    if len(parts) != 3 or any(not part.isdigit() for part in parts):
+    # Cloudron treats 6.2.6-1 as newer than 6.2.6. The suffix is a packaging revision.
+    match = re.fullmatch(r"(\d+)\.(\d+)\.(\d+)(?:-(\d+))?", str(value))
+    if not match:
         raise SystemExit(f"Refusing non-semver version: {value}")
-    return tuple(int(part) for part in parts)
+    major, minor, patch, revision = match.groups()
+    return (int(major), int(minor), int(patch), int(revision or 0))
 
 manifest_path = root / "CloudronManifest.json"
 original_manifest = manifest_path.read_text()

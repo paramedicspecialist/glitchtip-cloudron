@@ -12,6 +12,8 @@ With Cloudron sign-in, the first Cloudron account becomes the administrator. Cre
 
 Uploads, including sourcemaps, are stored in `/app/data/media`.
 
+Optional settings live in `/app/data/env.sh`. The file is created on first start and lists the settings you can change. The full GlitchTip list is https://glitchtip.com/documentation/install/#configuration. Restart the app after editing it. Set `ENABLE_SOCIAL_APPS_USER_REGISTRATION=false` to close Cloudron sign-up after the first account.
+
 The package version is the GlitchTip version. A daily Action publishes a new catalog entry when GlitchTip publishes a stable release and the matching Docker Hub image exists. Cloudron updates from `CloudronVersions.json`. Older catalog entries stay, so an install can roll back. A future major release can require a newer PostgreSQL than Cloudron's addon. If migrations fail after that upgrade, install the previous catalog version.
 
 Raise the app memory limit for a busy instance. The default is 1 GiB.

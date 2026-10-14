@@ -9,3 +9,5 @@ Open $CLOUDRON-APP-ORIGIN and create the first account. That person creates the 
 </nosso>
 
 Uploads are stored in /app/data/media.
+
+Optional settings are in /app/data/env.sh. Restart the app after editing that file. Set ENABLE_SOCIAL_APPS_USER_REGISTRATION=false there to close Cloudron sign-up after the first account.

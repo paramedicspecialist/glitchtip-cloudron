@@ -6,7 +6,12 @@ cd /code
 data_dir="/app/data"
 media_dir="${data_dir}/media"
 secret_file="${data_dir}/secret_key"
+env_file="${data_dir}/env.sh"
 mkdir -p "${media_dir}"
+
+if [[ ! -f "${env_file}" ]]; then
+    cp /app/pkg/env.sh "${env_file}"
+fi
 
 if [[ ! -s "${secret_file}" ]]; then
     python -c 'import secrets; print(secrets.token_urlsafe(50), end="")' > "${secret_file}"
@@ -74,6 +79,14 @@ if [[ "${oidc_ready}" == "true" ]]; then
     export ENABLE_SOCIAL_APPS_USER_REGISTRATION=true
 else
     export ENABLE_SOCIAL_APPS_USER_REGISTRATION=false
+fi
+
+if [[ -f "${env_file}" ]]; then
+    chmod 640 "${env_file}"
+    set -a
+    # shellcheck disable=SC1090
+    source "${env_file}"
+    set +a
 fi
 
 if [[ -z "${DATABASE_URL:-}" ]]; then
