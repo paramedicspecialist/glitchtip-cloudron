@@ -1,0 +1,4 @@
+[6.2.6]
+* GlitchTip 6.2.6
+* PostgreSQL, Redis, outbound mail, and local uploads from Cloudron
+* Optional Cloudron sign-in

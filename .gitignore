@@ -1,0 +1,6 @@
+.cloudron.json
+*.tar
+.DS_Store
+.cursor/
+__pycache__/
+*.pyc
