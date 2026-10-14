@@ -17,7 +17,7 @@
   "healthCheckPath": "/_health/",
   "httpPort": 8000,
   "memoryLimit": 1073741824,
-  "minBoxVersion": "8.0.0",
+  "minBoxVersion": "10.0.0",
   "manifestVersion": 2,
   "optionalSso": true,
   "icon": "file://logo.png",
