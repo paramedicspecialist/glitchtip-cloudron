@@ -1,0 +1,62 @@
+{
+  "stable": true,
+  "versions": {
+    "6.2.6": {
+      "creationDate": "Wed, 14 Oct 2026 03:47:40 GMT",
+      "manifest": {
+        "id": "com.glitchtip.cloudron",
+        "title": "GlitchTip",
+        "author": "Darkhorse",
+        "packagerName": "Darkhorse",
+        "packagerUrl": "https://github.com/paramedicspecialist",
+        "packageUrl": "https://github.com/paramedicspecialist/glitchtip-cloudron",
+        "tagline": "Error tracking for your Cloudron",
+        "version": "6.2.6",
+        "upstreamVersion": "6.2.6",
+        "description": "GlitchTip collects application errors, uptime checks, and logs. Send events with any Sentry-compatible SDK.\n\nThis unofficial package uses Cloudron PostgreSQL, Redis, outbound mail, and disk for uploads. Sign-in can stay inside GlitchTip, or use Cloudron OpenID Connect.\n\nhttps://glitchtip.com",
+        "changelog": "* GlitchTip 6.2.6\n* PostgreSQL, Redis, outbound mail, and local uploads from Cloudron\n* Optional Cloudron sign-in",
+        "postInstallMessage": "GlitchTip is ready at $CLOUDRON-APP-ORIGIN.\n\n<sso>\nSign in with Cloudron. That first account is the administrator. Create an organization in the app. Later Cloudron accounts can sign in too.\n</sso>\n\n<nosso>\nOpen $CLOUDRON-APP-ORIGIN and create the first account. That person creates the organization. Public signup closes after that account.\n</nosso>\n\nUploads are stored in /app/data/media.",
+        "website": "https://glitchtip.com",
+        "documentationUrl": "https://glitchtip.com/documentation",
+        "forumUrl": "https://gitlab.com/glitchtip/glitchtip-backend/-/issues",
+        "healthCheckPath": "/_health/",
+        "httpPort": 8000,
+        "memoryLimit": 1073741824,
+        "minBoxVersion": "8.0.0",
+        "manifestVersion": 2,
+        "optionalSso": true,
+        "icon": "file://logo.png",
+        "iconUrl": "https://raw.githubusercontent.com/paramedicspecialist/glitchtip-cloudron/main/logo.png",
+        "tags": [
+          "monitoring",
+          "errors",
+          "sentry"
+        ],
+        "addons": {
+          "localstorage": {},
+          "postgresql": {},
+          "redis": {},
+          "sendmail": {},
+          "oidc": {
+            "loginRedirectUri": "/accounts/oidc/cloudron/login/callback/",
+            "logoutRedirectUri": "/",
+            "tokenSignatureAlgorithm": "RS256"
+          }
+        },
+        "checklist": {
+          "first-admin-sso": {
+            "sso": true,
+            "message": "Sign in with Cloudron. That first account is the administrator. Create an organization in the app."
+          },
+          "first-admin-local": {
+            "sso": false,
+            "message": "Create the first account on the sign-in page. That person creates the organization. Public signup closes after that account."
+          }
+        },
+        "dockerImage": "ghcr.io/paramedicspecialist/glitchtip-cloudron:6.2.6"
+      },
+      "publishState": "published",
+      "ts": "Wed, 14 Oct 2026 03:47:40 GMT"
+    }
+  }
+}
